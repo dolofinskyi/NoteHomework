@@ -1,8 +1,8 @@
-package ua.test.project.dao;
+package ua.test.project.crud;
 
 import java.util.List;
 
-public interface DAOService<T> {
+public interface CRUDService<T> {
     List<T> listAll();
     T add(T element);
     void deleteById(long id);
