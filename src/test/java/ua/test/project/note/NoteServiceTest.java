@@ -8,8 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = NoteService.class)
 class NoteServiceTest {
-    @Autowired
     private NoteService noteService;
+
+    @Autowired
+    NoteServiceTest(NoteService noteService) {
+        this.noteService = noteService;
+    }
 
     @Test
     void addNullNoteTest() {
