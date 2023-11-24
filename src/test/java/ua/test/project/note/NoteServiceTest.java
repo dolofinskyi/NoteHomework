@@ -64,13 +64,6 @@ class NoteServiceTest {
         assertDoesNotThrow(() -> noteService.deleteById(test.getId()));
     }
 
-    Note createValidNote() {
-        Note note = new Note();
-        note.setTitle("title");
-        note.setContent("content");
-        return note;
-    }
-
     @Test
     void updateNullNoteTest() {
         assertThrows(NullPointerException.class,
@@ -101,5 +94,12 @@ class NoteServiceTest {
     void getByIdTest() {
         Note expected = noteService.add(createValidNote());
         assertEquals(expected, noteService.getById(expected.getId()));
+    }
+
+    Note createValidNote() {
+        Note note = new Note();
+        note.setTitle("title");
+        note.setContent("content");
+        return note;
     }
 }
